@@ -1,0 +1,17 @@
+{
+  "github.copilot.enable": {
+    "*": false
+  },
+  "git.branchProtection": ["main", "master"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "editor.formatOnSave": true,
+  "chat.disableAIFeatures": false,
+  "chat.agent.enabled": false,
+  "editor.inlineSuggest.enabled": false,
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "liveServer.settings.file": "404.html",
+  "prettier.printWidth": 80
+}
