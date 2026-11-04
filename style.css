@@ -1,14 +1,18 @@
 /* Variabler */
 html {
-  --color-page: #f7f7f7;
+  --color-page: #fbb8c9;
   --color-surface: #fff;
   --color-text: #222;
   --color-muted: #666;
-  --color-border: #d8d8d8;
+  --color-border: #9b0200;
+  --color-footer: #c4e9ef;
+
   --space-05: 0.5rem;
   --space-1: 1rem;
   --space-2: 2rem;
   --space-3: 3rem;
+
+  font-family: "Sometype Mono", monospace;
 
   background: var(--color-page);
   color: var(--color-text);
@@ -61,6 +65,7 @@ main > * {
   display: grid;
   gap: var(--space-2);
   align-items: start;
+
   @media (width > 800px) {
     grid-template-columns: 1fr min(40%, 36ch);
   }
@@ -69,6 +74,7 @@ main > * {
 .form-page {
   display: grid;
   gap: var(--space-2);
+
   @media (width > 600px) {
     grid-template-columns: min(40%, 50ch) 1fr;
   }
@@ -119,10 +125,18 @@ main > * {
 .site-header,
 .site-footer {
   grid-column: 1 / -1;
-
   display: grid;
   grid-template-columns: inherit;
   background: var(--color-surface);
+}
+
+.site-header {
+  background: var(--color-page);
+}
+
+.site-footer {
+  background: var(--color-footer);
+  color: #213235;
 }
 
 .header-content,
@@ -136,21 +150,38 @@ main > * {
   justify-content: space-between;
   align-items: center;
   gap: var(--space-1);
+  color: #9b0200;
 }
 
 .site-logo {
   color: inherit;
-  font-weight: 700;
+  font-family: "Reenie Beanie", cursive;
+  font-size: 2.5rem;
   text-decoration: none;
 }
 
 .footer-content {
-  padding-block: var(--space-1);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--space-1);
-  color: var(--color-muted);
+  padding-block: var(--space-2);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+}
+
+.footer-column {
+  display: grid;
+  align-content: start;
+  gap: var(--space-05);
+}
+
+.footer-column a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  grid-column: 1 / -1;
+  border-top: 1px solid #213235;
+  padding-top: var(--space-1);
 }
 
 /* Navigation */
@@ -165,6 +196,7 @@ main > * {
   padding: 0.4rem 0.7rem;
   border: 1px solid var(--color-border);
   background: var(--color-surface);
+
   @media (width > 600px) {
     display: none;
   }
@@ -176,6 +208,7 @@ main > * {
   list-style: none;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
+
   @media (width > 600px) {
     display: flex;
     gap: var(--space-1);
@@ -189,7 +222,7 @@ main > * {
 .menu a {
   display: block;
   padding: 0.4rem 0;
-  color: inherit;
+  color: #9b0200;
   text-decoration: none;
   border-bottom: 2px solid #0000;
 }
@@ -250,4 +283,45 @@ main > * {
   background: var(--color-surface);
   color: inherit;
   text-decoration: none;
+}
+
+/***************** FORSIDE ****************/
+
+.background {
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  padding: 0;
+}
+
+.background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tray {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tray img:first-child {
+  width: 40%;
+  height: auto;
+  display: block;
+}
+
+.tray img:nth-child(2) {
+  position: absolute;
+  width: 15%;
+  height: auto;
+  top: 50%;
+  left: 49.4%;
+  transform: translate(-50%, -50%);
 }
