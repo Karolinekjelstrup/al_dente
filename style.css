@@ -1,7 +1,7 @@
 /* Variabler */
 html {
   --color-page: #fbb8c9;
-  --color-surface: #fff;
+  --color-surface: #fbb8c9;
   --color-text: #222;
   --color-muted: #666;
   --color-border: #9b0200;
@@ -131,6 +131,7 @@ main {
   list-style: none;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
+  position-area: bottom span-left;
 
   @media (width > 600px) {
     display: flex;
