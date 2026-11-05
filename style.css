@@ -1,7 +1,7 @@
 /* Variabler */
 html {
-  --color-page: #f7f7f7;
-  --color-surface: #fff;
+  --color-page: pink;
+  --color-surface: pink;
   --color-text: #222;
   --color-muted: #666;
   --color-border: #d8d8d8;
@@ -133,14 +133,19 @@ main > * {
 .header-content {
   min-height: 4rem;
   display: flex;
+  color: #8f1b12;
+  font-size: 30px;
+  font-family: "Reenie Beanie", cursive;
   justify-content: space-between;
   align-items: center;
   gap: var(--space-1);
 }
 
 .site-logo {
-  color: inherit;
-  font-weight: 700;
+  color: #8f1b12;
+  font-family: "Reenie Beanie", cursive;
+  font-size: 70px;
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -191,7 +196,8 @@ main > * {
   padding: 0.4rem 0;
   color: inherit;
   text-decoration: none;
-  border-bottom: 2px solid #0000;
+  border-bottom: 2px solid black;
+  color: #8f1b12;
 }
 
 .menu a[aria-current="page"] {
@@ -250,4 +256,220 @@ main > * {
   background: var(--color-surface);
   color: inherit;
   text-decoration: none;
+}
+
+/*************** FORSIDE STYLING OG GRIDS ************************/
+
+/* Baggrund*/
+main {
+  background-color: pink;
+}
+/* header billede med tekst rundt om */
+.billedtekst {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 6px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #9a1b16;
+  width: fit-content; /* kun så bred som indholdet */
+  margin: 0 auto; /* sæt den i midten af siden */
+
+  @media (width > 800px) {
+    font-size: 50px;
+  }
+}
+
+.top {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  text-align: center;
+}
+
+.venstre {
+  grid-column: 1;
+  grid-row: 2;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.billede {
+  grid-column: 2;
+  grid-row: 2;
+  object-fit: cover;
+  width: 260px;
+  height: 350px;
+
+  @media (width > 800px) {
+    width: 470px;
+    height: 650px;
+  }
+}
+
+.højre {
+  grid-column: 3;
+  grid-row: 2;
+  writing-mode: vertical-rl;
+  display: flex;
+  justify-content: space-between; /* RANT øverst, AL DENTE nederst */
+}
+
+/* header tekst og knapper */
+.infotekst {
+  text-align: center;
+  font-size: 16px;
+  color: #ffffff;
+  margin: 30px 0;
+  font-family: "Sometype Mono", monospace;
+
+  @media (width > 800px) {
+    font-size: 22px;
+    margin: 40px 0;
+  }
+}
+.tekst1 {
+  margin-bottom: 20px;
+}
+
+.forsideknapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 16px;
+  font-family: "Sometype Mono", monospace;
+
+  @media (width > 800px) {
+    grid-template-columns: 1fr 1fr;
+    font-size: 18px;
+  }
+}
+
+.knap1 {
+  background: #8f1b12;
+  color: #fbf4ec;
+  border: 2px solid #8f1b12;
+  padding: 5px;
+}
+
+.knap2 {
+  background: transparent;
+  color: #8f1b12;
+  border: 2px solid #8f1b12;
+  padding: 5px;
+}
+
+/* inforbokse/billeder */
+.infobilleder {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  object-fit: cover;
+  grid-row: 1 / 3;
+  grid-column: 1;
+  z-index: 1;
+  margin: 40px 20px;
+
+  @media (width > 800px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 100px;
+  }
+}
+
+.info {
+  grid-template-rows: 2fr 2fr 1fr;
+  display: grid;
+  grid-column: 1 / -1;
+}
+.baggrundf {
+  grid-row: 2 / 4;
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 0;
+  min-height: 100%;
+  object-fit: cover;
+}
+.infobilleder img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: #3b350a;
+  color: #fbf4ec;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  padding: 60px 20px;
+  color: #fbf4ec;
+
+  @media (width > 800px) {
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* logo | 3 kolonner */
+    padding: 100px 60px 70px;
+  }
+}
+
+.footer-logo {
+  width: 220px;
+
+  @media (width > 800px) {
+    width: 300px;
+  }
+}
+
+/* De 3 tekstkolonner */
+.footer-kolonne {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  font-family: "Sometype Mono", monospace;
+  font-size: 15px;
+  text-transform: uppercase; /* gør teksten til store bogstaver */
+}
+
+.footer-kolonne h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.footer-kolonne a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Stregen */
+.footer-linje {
+  grid-column: 1 / -1;
+  width: 100%;
+  border: none;
+  border-top: 1px solid #fbf4ec;
+  margin: 20px 0;
+}
+
+/* Bunden */
+.footer-år,
+.footer-slogan {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+
+.footer-år {
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.footer-slogan {
+  font-size: 17px;
+
+  @media (width > 800px) {
+    grid-column: 2 / -1; /* starter under "Find us" */
+  }
 }
