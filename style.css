@@ -1,6 +1,6 @@
-/* Variabler */
+/* VARIABLER */
 html {
-  --color-page: #fbb8c9;
+  --color-page: #c4e9ef;
   --color-surface: #fbb8c9;
   --color-text: #222;
   --color-muted: #666;
@@ -38,19 +38,93 @@ main {
   display: grid;
   grid-template-columns: inherit;
   grid-column: 1 / -1;
-  align-content: stretch;
-  position: relative;
-  isolation: isolate;
-  min-height: 70vh;
+  align-content: start;
 }
 
-/* Header og footer */
+main > * {
+  grid-column: 2;
+  padding-block: var(--space-3);
+}
+
+.svg-page {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.svg-intro {
+  display: grid;
+  gap: var(--space-1);
+  max-width: 60ch;
+}
+
+.svg-intro p {
+  color: var(--color-muted);
+}
+
+.svg-layout {
+  display: grid;
+  gap: var(--space-2);
+  align-items: start;
+  @media (width > 800px) {
+    grid-template-columns: 1fr min(40%, 36ch);
+  }
+}
+
+.form-page {
+  display: grid;
+  gap: var(--space-2);
+  @media (width > 600px) {
+    grid-template-columns: min(40%, 50ch) 1fr;
+  }
+}
+
+.form-intro {
+  display: grid;
+  gap: var(--space-1);
+  align-content: start;
+  max-width: 60ch;
+}
+
+.form-intro p {
+  color: var(--color-muted);
+}
+
+.opsamling-page {
+  display: grid;
+  gap: var(--space-2);
+  align-items: start;
+
+  @media (width > 800px) {
+    grid-template-columns: minmax(0, 44ch) minmax(20rem, 1fr);
+  }
+}
+
+.opsamling-intro {
+  display: grid;
+  gap: var(--space-1);
+  max-width: 60ch;
+}
+
+.opsamling-intro p {
+  color: var(--color-muted);
+}
+
+.error-page {
+  display: grid;
+  gap: var(--space-1);
+  max-width: 60ch;
+}
+
+.error-page p {
+  color: var(--color-muted);
+}
+
+/* HEADER OG FOOTER */
 .site-header,
 .site-footer {
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: inherit;
-  background: var(--color-surface);
 }
 
 .site-header {
@@ -83,6 +157,7 @@ main {
   text-decoration: none;
 }
 
+/* FOOTER */
 .footer-content {
   padding-block: var(--space-2);
   display: grid;
@@ -107,7 +182,7 @@ main {
   padding-top: var(--space-1);
 }
 
-/* Navigation */
+/* NAVIGATION */
 [popover] {
   margin: 0;
   padding: 0;
@@ -155,12 +230,179 @@ main {
   border-bottom-color: var(--color-border);
 }
 
-/* Grøn baggrund */
-.background {
+/* FORSIDENS SEKTIONER */
+.header,
+.info,
+.karoline {
+  grid-column: 1 / -1;
+}
+
+/* HERO SECTION */
+.header {
+  display: grid;
+  align-content: start;
+  padding-block: var(--space-3);
+  background: var(--color-page);
+}
+
+/* HEADER BILLEDE MED TEKST RUNDT OM */
+.billedtekst {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 6px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #9a1b16;
+  width: fit-content;
+  margin: 0 auto;
+
+  @media (width > 800px) {
+    font-size: 50px;
+  }
+}
+
+.top {
   grid-column: 1 / -1;
   grid-row: 1;
+  text-align: center;
+}
+
+.venstre {
+  grid-column: 1;
+  grid-row: 2;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.billede {
+  grid-column: 2;
+  grid-row: 2;
+  object-fit: cover;
+  width: 260px;
+  height: 350px;
+
+  @media (width > 800px) {
+    width: 470px;
+    height: 650px;
+  }
+}
+
+.højre {
+  grid-column: 3;
+  grid-row: 2;
+  writing-mode: vertical-rl;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* HEADER TEKST */
+.infotekst {
+  text-align: center;
+  font-size: 16px;
+  color: #ffffff;
+  margin: 30px 0;
+  font-family: "Sometype Mono", monospace;
+
+  @media (width > 800px) {
+    font-size: 22px;
+    margin: 40px 0;
+  }
+}
+
+.tekst1 {
+  margin-bottom: 20px;
+}
+
+/* FORSIDEKNAPPER */
+.forsideknapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 16px;
+  font-family: "Sometype Mono", monospace;
+
+  @media (width > 800px) {
+    grid-template-columns: 1fr 1fr;
+    font-size: 18px;
+  }
+}
+
+.knap1 {
+  background: #8f1b12;
+  color: #fbf4ec;
+  border: 2px solid #8f1b12;
+  padding: 5px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.knap2 {
+  background: transparent;
+  color: #8f1b12;
+  border: 2px solid #8f1b12;
+  padding: 5px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* INFO / FLISER */
+/* Lauras originale grid-opsætning */
+.infobilleder {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  object-fit: cover;
+  grid-row: 1 / 3;
+  grid-column: 1;
+  z-index: 1;
+  margin: 40px 20px;
+
+  @media (width > 800px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 100px;
+  }
+}
+
+.info {
+  grid-template-rows: 2fr 2fr 1fr;
+  display: grid;
+  grid-column: 1 / -1;
+}
+
+.baggrundf {
+  grid-row: 2 / 4;
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 0;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.infobilleder img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+}
+
+/* GRØN SEKTION */
+.karoline {
+  display: grid;
+  grid-template-columns: inherit;
+  position: relative;
+  isolation: isolate;
+  min-height: 70vh;
+  align-items: center;
+}
+
+/* GRØN BAGGRUND */
+.background {
   position: absolute;
   inset: 0;
+  grid-column: 1 / -1;
   z-index: -1;
   padding: 0;
 }
@@ -172,10 +414,9 @@ main {
   display: block;
 }
 
-/* Tray */
+/* TRAY */
 .tray {
   grid-column: 2;
-  grid-row: 1;
   position: relative;
   display: flex;
   justify-content: center;
@@ -198,7 +439,7 @@ main {
   transform: translate(-50%, -50%);
 }
 
-/* Responsivt layout */
+/* RESPONSIVT LAYOUT */
 @media (max-width: 600px) {
   .footer-content {
     grid-template-columns: repeat(2, 1fr);
@@ -211,4 +452,65 @@ main {
   .tray img:nth-child(2) {
     width: 28%;
   }
+}
+
+/* WORKSHOP ACCORDION */
+
+.panel {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.accordion {
+  display: grid;
+  border-top: 1px solid var(--color-border);
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.accordion-item summary {
+  padding: 1.2rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #9b0200;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-item summary::after {
+  content: "+";
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.accordion-item[open] summary::after {
+  content: "−";
+}
+
+.accordion-item > div {
+  padding: 0 0 1.2rem;
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+#spotlight-circle {
+  transition: cx 0.6s ease-in-out;
+}
+
+.svg-spotlight #overlay {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.svg-spotlight #overlay.is-visible {
+  opacity: 1;
 }

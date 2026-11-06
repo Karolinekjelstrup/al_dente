@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 
 <head>
   <meta charset="UTF-8">
@@ -22,12 +22,14 @@
 
 <body>
 
+  <!-- HEADER / MENU -->
   <header class="site-header">
     <div class="header-content">
       <a class="site-logo" href="./">al dEnTe</a>
 
       <nav class="site-nav">
         <button popovertarget="menu">Menu</button>
+
         <ul class="menu" id="menu" popover>
           <li><a href="./" aria-current="page">HOME</a></li>
           <li><a href="./svg.html">WORKSHOPS</a></li>
@@ -37,19 +39,80 @@
     </div>
   </header>
 
+
+  <!-- MAIN -->
   <main>
 
-    <div class="background">
-      <img src="imgs/forside/background.webp" alt="Grøn baggrund">
-    </div>
+    <!-- HERO SECTION -->
+    <section class="header">
 
-    <div class="tray">
-      <img src="imgs/forside/tray.webp" alt="Tray">
-      <img src="imgs/forside/workshops.svg" alt="Workshops">
-    </div>
+      <div class="billedtekst">
+        <h2 class="top">ITALIAN RESTAU-</h2>
+
+        <h2 class="venstre">GRAND OPENING</h2>
+
+        <img class="billede" src="./imgs/forside/hero.webp" alt="Fire skeer i en crème brûlée">
+
+        <h2 class="højre">
+          <span>RANT</span>
+          <span>AL DENTE</span>
+        </h2>
+      </div>
+
+      <div class="infotekst">
+        <p class="tekst1">
+          7-9pm<br>
+          1st of december<br>
+          Al dente Copenhagen
+        </p>
+
+        <p class="tekst2">
+          Rue Amélie, Bredgade 51<br>
+          1260 Copenhagen K<br>
+          Denmark
+        </p>
+      </div>
+
+      <section class="forsideknapper">
+        <a class="knap1" href="./svg.html">Find your workshop</a>
+        <a class="knap2" href="./form.html">Tilmeld dig</a>
+      </section>
+
+    </section>
+
+
+    <!-- INFO / FLISER -->
+    <section class="info">
+
+      <div class="infobilleder">
+        <img src="./imgs/forside/et.webp" alt="Skåler">
+        <img src="./imgs/forside/to.webp" alt="Smagsprøver">
+        <img src="./imgs/forside/tre.webp" alt="En lækker ret">
+      </div>
+
+      <img class="baggrundf" src="./imgs/forside/fliser.webp" alt="Flisebaggrund">
+
+    </section>
+
+
+    <!-- GRØN SEKTION -->
+    <section class="karoline">
+
+      <div class="background">
+        <img src="./imgs/forside/background.webp" alt="Grøn baggrund">
+      </div>
+
+      <div class="tray">
+        <img src="./imgs/forside/tray.webp" alt="Tray">
+        <img src="./imgs/forside/workshops.svg" alt="Workshops">
+      </div>
+
+    </section>
 
   </main>
 
+
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-content">
 
@@ -80,6 +143,7 @@
   </footer>
 
   <script src="./script.js"></script>
+
 </body>
 
 </html>

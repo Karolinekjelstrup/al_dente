@@ -32,24 +32,30 @@
       </header>
 
       <section class="svg-layout">
-        <div class="svg-placeholder"></div>
+        <div class="svg-placeholder">
+          <svg class="svg-spotlight" viewBox="0 0 1920 1080">
+            <use href="./svg/spotlight.svg#tegninger"> </use>
+            <use class="overlay" href="./svg/spotlight.svg#overlay"></use>
+          </svg>
+
+        </div>
 
         <article class="panel">
           <h2>Udforsk eventet</h2>
           <div class="accordion">
             <!-- TODO: Lav om til details/summary -->
-            <div class="accordion-item">
-              <h3>Punkt 1</h3>
-              <p>Beskriv første område, aktivitet eller del af dit event.</p>
-            </div>
-            <div class="accordion-item">
-              <h3>Punkt 2</h3>
-              <p>Beskriv andet område, aktivitet eller del af dit event.</p>
-            </div>
-            <div class="accordion-item">
-              <h3>Punkt 3</h3>
-              <p>Beskriv tredje område, aktivitet eller del af dit event.</p>
-            </div>
+            <details class="accordion-item" data-spotlight="cocktail">
+              <summary>Cocktail</summary>
+              <div>Beskriv første område, aktivitet eller del af dit event.</div>
+            </details>
+            <details class="accordion-item" data-spotlight="pasta">
+              <summary>Pasta</summary>
+              <div>Beskriv andet område, aktivitet eller del af dit event.</div>
+            </details>
+            <details class="accordion-item" data-spotlight="dessert">
+              <summary>Dessert</summary>
+              <div>Beskriv tredje område, aktivitet eller del af dit event.</div>
+            </details>
           </div>
         </article>
       </section>
