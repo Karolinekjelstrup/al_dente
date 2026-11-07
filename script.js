@@ -7,7 +7,7 @@ let spotlight = null;
 let overlay = null;
 
 if (svgElement) {
-  fetch("./svg/spotlight.svg")
+  fetch("./spotlight.svg")
     .then((response) => response.text())
     .then((svgCode) => {
       const parser = new DOMParser();
