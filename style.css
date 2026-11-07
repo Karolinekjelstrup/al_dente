@@ -1,4 +1,7 @@
-/* VARIABLER */
+/* =========================================
+   1. VARIABLER OG GRUNDINDSTILLINGER
+========================================= */
+
 html {
   --color-page: #fbb8c9;
   --color-surface: #fbb8c9;
@@ -13,23 +16,21 @@ html {
   --space-3: 3rem;
 
   font-family: "Sometype Mono", monospace;
-
   background: var(--color-page);
   color: var(--color-text);
 }
 
-/* Globalt layout */
+/* =========================================
+   2. GLOBALT LAYOUT
+========================================= */
+
 body {
   margin: 0;
   min-height: 100svh;
+
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: minmax(1rlh, 1fr) minmax(0, 75rem) minmax(1rlh, 1fr);
-}
-
-/* WORKSHOP-SIDENS BAGGRUND */
-body.workshop-page {
-  background: #c4e9ef;
 }
 
 h1,
@@ -51,82 +52,12 @@ main > * {
   padding-block: var(--space-3);
 }
 
-.svg-page {
-  display: grid;
-  gap: var(--space-2);
-}
-
-.svg-intro {
-  display: grid;
-  gap: var(--space-1);
-  max-width: 60ch;
-}
-
-.svg-intro p {
-  color: var(--color-muted);
-}
-
-.svg-layout {
-  display: grid;
-  gap: var(--space-2);
-  align-items: start;
-
-  @media (width > 800px) {
-    grid-template-columns: 1fr min(40%, 36ch);
-  }
-}
-
-.form-page {
-  display: grid;
-  gap: var(--space-2);
-
-  @media (width > 600px) {
-    grid-template-columns: min(40%, 50ch) 1fr;
-  }
-}
-
-.form-intro {
-  display: grid;
-  gap: var(--space-1);
-  align-content: start;
-  max-width: 60ch;
-}
-
-.form-intro p {
-  color: var(--color-muted);
-}
-
-.opsamling-page {
-  display: grid;
-  gap: var(--space-2);
-  align-items: start;
-
-  @media (width > 800px) {
-    grid-template-columns: minmax(0, 44ch) minmax(20rem, 1fr);
-  }
-}
-
-.opsamling-intro {
-  display: grid;
-  gap: var(--space-1);
-  max-width: 60ch;
-}
-
-.opsamling-intro p {
-  color: var(--color-muted);
-}
-
-.error-page {
-  display: grid;
-  gap: var(--space-1);
-  max-width: 60ch;
-}
-
-.error-page p {
-  color: var(--color-muted);
-}
+/* =========================================
+   3. FÆLLES HEADER, NAVIGATION OG FOOTER
+========================================= */
 
 /* HEADER OG FOOTER */
+
 .site-header,
 .site-footer {
   grid-column: 1 / -1;
@@ -148,6 +79,8 @@ main > * {
   grid-column: 2;
 }
 
+/* HEADER */
+
 .header-content {
   min-height: 4rem;
   display: flex;
@@ -164,7 +97,44 @@ main > * {
   text-decoration: none;
 }
 
+/* NAVIGATION */
+
+[popover] {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.site-nav button {
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.menu {
+  margin: 0;
+  padding: var(--space-1);
+  list-style: none;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  position-area: bottom span-left;
+}
+
+.menu a {
+  display: block;
+  padding: 0.4rem 0;
+  color: #9b0200;
+  text-decoration: none;
+  border-bottom: 2px solid #0000;
+}
+
+.menu a[aria-current="page"] {
+  border-bottom-color: var(--color-border);
+}
+
 /* FOOTER */
+
 .footer-content {
   padding-block: var(--space-2);
   display: grid;
@@ -189,55 +159,12 @@ main > * {
   padding-top: var(--space-1);
 }
 
-/* NAVIGATION */
-[popover] {
-  margin: 0;
-  padding: 0;
-  border: none;
-  background: transparent;
-}
+/* =========================================
+   4. FORSIDE
+========================================= */
 
-.site-nav button {
-  padding: 0.4rem 0.7rem;
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
+/* FORSIDENS TRE SEKTIONER */
 
-  @media (width > 600px) {
-    display: none;
-  }
-}
-
-.menu {
-  margin: 0;
-  padding: var(--space-1);
-  list-style: none;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  position-area: bottom span-left;
-
-  @media (width > 600px) {
-    display: flex;
-    gap: var(--space-1);
-    padding: 0;
-    border: none;
-    background: none;
-    position: static;
-  }
-}
-
-.menu a {
-  display: block;
-  padding: 0.4rem 0;
-  color: #9b0200;
-  text-decoration: none;
-  border-bottom: 2px solid #0000;
-}
-
-.menu a[aria-current="page"] {
-  border-bottom-color: var(--color-border);
-}
-
-/* FORSIDENS SEKTIONER */
 .header,
 .info,
 .karoline {
@@ -245,6 +172,7 @@ main > * {
 }
 
 /* HERO SECTION */
+
 .header {
   display: grid;
   align-content: start;
@@ -252,7 +180,8 @@ main > * {
   background: var(--color-page);
 }
 
-/* HEADER BILLEDE MED TEKST RUNDT OM */
+/* BILLEDE MED TEKST RUNDT OM */
+
 .billedtekst {
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -263,10 +192,6 @@ main > * {
   color: #9a1b16;
   width: fit-content;
   margin: 0 auto;
-
-  @media (width > 800px) {
-    font-size: 50px;
-  }
 }
 
 .top {
@@ -288,11 +213,6 @@ main > * {
   object-fit: cover;
   width: 260px;
   height: 350px;
-
-  @media (width > 800px) {
-    width: 470px;
-    height: 650px;
-  }
 }
 
 .højre {
@@ -303,18 +223,14 @@ main > * {
   justify-content: space-between;
 }
 
-/* HEADER TEKST */
+/* HERO INFORMATIONSTEKST */
+
 .infotekst {
   text-align: center;
   font-size: 16px;
   color: #ffffff;
   margin: 30px 0;
   font-family: "Sometype Mono", monospace;
-
-  @media (width > 800px) {
-    font-size: 22px;
-    margin: 40px 0;
-  }
 }
 
 .tekst1 {
@@ -322,6 +238,7 @@ main > * {
 }
 
 /* FORSIDEKNAPPER */
+
 .forsideknapper {
   display: grid;
   grid-template-columns: 1fr;
@@ -330,11 +247,6 @@ main > * {
   margin: 0 auto;
   font-size: 16px;
   font-family: "Sometype Mono", monospace;
-
-  @media (width > 800px) {
-    grid-template-columns: 1fr 1fr;
-    font-size: 18px;
-  }
 }
 
 .knap1 {
@@ -356,37 +268,21 @@ main > * {
 }
 
 /* INFO / FLISER */
-/* Lauras originale grid-opsætning */
+
+.info {
+  display: grid;
+  grid-template-rows: auto;
+  padding-bottom: 0;
+}
+
 .infobilleder {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-  object-fit: cover;
   grid-row: 1 / 3;
   grid-column: 1;
   z-index: 1;
   margin: 40px 20px;
-
-  @media (width > 800px) {
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 100px;
-  }
-}
-
-.info {
-  grid-template-rows: 2fr 2fr 1fr;
-  display: grid;
-  grid-column: 1 / -1;
-}
-
-.baggrundf {
-  grid-row: 2 / 4;
-  grid-column: 1 / -1;
-  width: 100%;
-  height: 0;
-  min-height: 100%;
-  object-fit: cover;
-  object-position: center bottom;
 }
 
 .infobilleder img {
@@ -395,7 +291,18 @@ main > * {
   aspect-ratio: 3 / 4;
 }
 
+/* .baggrundf {
+  grid-row: 2 / 4;
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 0;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+} */
+
 /* GRØN SEKTION */
+
 .karoline {
   display: grid;
   grid-template-columns: inherit;
@@ -406,6 +313,7 @@ main > * {
 }
 
 /* GRØN BAGGRUND */
+
 .background {
   position: absolute;
   inset: 0;
@@ -422,6 +330,7 @@ main > * {
 }
 
 /* TRAY */
+
 .tray {
   grid-column: 2;
   position: relative;
@@ -432,36 +341,59 @@ main > * {
 }
 
 .tray img:first-child {
-  width: 40%;
+  width: 60%;
   height: auto;
   display: block;
 }
 
 .tray img:nth-child(2) {
   position: absolute;
-  width: 15%;
+  width: 23%;
   height: auto;
   top: 50%;
   left: 49.4%;
   transform: translate(-50%, -50%);
 }
 
-/* RESPONSIVT LAYOUT */
-@media (max-width: 600px) {
-  .footer-content {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* =========================================
+   5. WORKSHOPS (SVG)
+========================================= */
 
-  .tray img:first-child {
-    width: 75%;
-  }
+/* BAGGRUND */
 
-  .tray img:nth-child(2) {
-    width: 28%;
-  }
+body.workshop-page {
+  background: #c4e9ef;
 }
 
-/* WORKSHOP ACCORDION */
+.workshop-page .site-header {
+  background: #c4e9ef;
+}
+
+/* WORKSHOP-LAYOUT */
+
+.svg-page {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.svg-intro {
+  display: grid;
+  gap: var(--space-1);
+  max-width: 60ch;
+}
+
+.svg-intro p {
+  color: var(--color-muted);
+}
+
+.svg-layout {
+  display: grid;
+  gap: var(--space-2);
+  align-items: start;
+}
+
+/* ACCORDION */
+
 .panel {
   display: grid;
   gap: var(--space-1);
@@ -508,6 +440,8 @@ main > * {
   line-height: 1.7;
 }
 
+/* INTERAKTIV SVG */
+
 #spotlight-circle {
   transition: cx 0.6s ease-in-out;
 }
@@ -521,7 +455,119 @@ main > * {
   opacity: 1;
 }
 
-/* WORKSHOP-SIDENS MENU */
-.workshop-page .site-header {
-  background: #c4e9ef;
+/* =========================================
+   6. SIGN UP (FORM)
+========================================= */
+
+.form-page {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.form-intro {
+  display: grid;
+  gap: var(--space-1);
+  align-content: start;
+  max-width: 60ch;
+}
+
+.form-intro p {
+  color: var(--color-muted);
+}
+
+/* =========================================
+   7. OPSAMLING
+========================================= */
+
+.opsamling-page {
+  display: grid;
+  gap: var(--space-2);
+  align-items: start;
+}
+
+.opsamling-intro {
+  display: grid;
+  gap: var(--space-1);
+  max-width: 60ch;
+}
+
+.opsamling-intro p {
+  color: var(--color-muted);
+}
+
+/* =========================================
+   8. RESPONSIVE DESIGN
+========================================= */
+
+/* MOBIL */
+
+@media (max-width: 600px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tray img:first-child {
+    width: 75%;
+  }
+
+  .tray img:nth-child(2) {
+    width: 28%;
+  }
+}
+
+/* TABLET OG STØRRE */
+
+@media (min-width: 601px) {
+  .site-nav button {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    gap: var(--space-1);
+    padding: 0;
+    border: none;
+    background: none;
+    position: static;
+  }
+
+  .form-page {
+    grid-template-columns: min(40%, 50ch) 1fr;
+  }
+}
+
+/* STØRRE SKÆRME */
+
+@media (min-width: 801px) {
+  .billedtekst {
+    font-size: 50px;
+  }
+
+  .billede {
+    width: 470px;
+    height: 650px;
+  }
+
+  .infotekst {
+    font-size: 22px;
+    margin: 40px 0;
+  }
+
+  .forsideknapper {
+    grid-template-columns: 1fr 1fr;
+    font-size: 18px;
+  }
+
+  .infobilleder {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 100px;
+  }
+
+  .svg-layout {
+    grid-template-columns: 1fr min(40%, 36ch);
+  }
+
+  .opsamling-page {
+    grid-template-columns: minmax(0, 44ch) minmax(20rem, 1fr);
+  }
 }
