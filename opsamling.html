@@ -1,50 +1,140 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Opsamling | Eventnavn</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+
+  <title>Al Dente</title>
   <link rel="stylesheet" href="./starter.css">
   <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
+<body class="opsamling-page-body">
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="header-content">
-      <a class="site-logo" href="./">Eventnavn</a>
+      <a class="site-logo" href="./">al dEnTe</a>
+
       <nav class="site-nav">
         <button>Menu</button>
+
         <ul class="menu" id="menu" popover>
-          <li><a href="./">Forside</a></li>
-          <li><a href="./svg.html">Interaktiv SVG</a></li>
-          <li><a href="./form.html" aria-current="page">Formular</a></li>
+          <li><a href="./">Home</a></li>
+          <li><a href="./svg.html">Workshops</a></li>
+          <li><a href="./form.html">Sign up</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <!-- MAIN -->
   <main>
     <section class="opsamling-page">
-      <div class="opsamling-intro">
-        <h1>Opsamling</h1>
-        <p>Vis brugerens valg som et pass, en invitation eller noget andet, der passer til dit event.</p>
-        <div class="actions">
-          <a class="button" href="./form.html">Tilbage til formular</a>
-        </div>
+
+      <!-- INVITATION CARD -->
+      <article class="invitation-card">
+
+        <header class="invitation-header">
+          <a class="invitation-logo" href="./">al dEnTe</a>
+
+          <p>
+            GRAND OPENING<br>
+            EVENT INVITATION
+          </p>
+        </header>
+
+        <section class="invitation-content">
+
+          <div class="invitation-name">
+            <p class="invitation-eyebrow">A PLACE AT OUR TABLE FOR</p>
+            <p id="invitation-name"></p>
+          </div>
+
+          <h1 id="invitation-activity"></h1>
+
+          <div class="invitation-middle">
+
+            <div class="invitation-text">
+              <h2 id="invitation-title"></h2>
+              <p id="invitation-description"></p>
+            </div>
+
+            <div class="invitation-illustration">
+              <div class="illustration-circle"></div>
+
+              <img id="invitation-image" src="" alt="">
+            </div>
+
+          </div>
+
+          <footer class="invitation-footer">
+            <p>
+              We can't wait<br>
+              to see you
+            </p>
+
+            <p>
+              GOOD FOOD.<br>
+              GOOD COMPANY.
+            </p>
+          </footer>
+
+        </section>
+
+      </article>
+
+      <!-- ACTIONS -->
+      <div class="invitation-actions">
+        <a href="./form.html">Back to sign up</a>
       </div>
 
-      <article class="opsamling-placeholder"></article>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-content">
-      <p>Eventnavn</p>
-      <p>Footer</p>
+
+      <div class="footer-column">
+        <h4>MENU</h4>
+        <a href="./">HOME</a>
+        <a href="./svg.html">WORKSHOPS</a>
+        <a href="./form.html">SIGN UP</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>GRAND OPENING</h4>
+        <p>DECEMBER 1ST</p>
+        <p>7–9PM</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>FIND US</h4>
+        <p>RUE AMÉLIE, BREDGADE 51</p>
+        <p>1260 COPENHAGEN</p>
+      </div>
+
+      <div class="footer-bottom">
+        AL DENTE 2026
+      </div>
+
     </div>
   </footer>
+
   <script src="./script.js"></script>
+
 </body>
 
 </html>

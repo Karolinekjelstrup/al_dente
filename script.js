@@ -65,9 +65,58 @@ function updateSvgPosition() {
 }
 
 // Opsamlingsside
-const opsamlingPlaceholder = document.querySelector(".opsamling-placeholder");
+const opsamlingPlaceholder = document.querySelector(".invitation-card");
 
 if (opsamlingPlaceholder) {
   const params = new URLSearchParams(window.location.search);
-  // Eksempel: params.get("navn") henter værdien fra et formularfelt med name="navn".
+
+  // Hent oplysninger fra formularen
+  const name = params.get("name");
+  const activity = params.get("activity");
+
+  // Indhold til de tre invitationer
+  const invitations = {
+    Pasta: {
+      title: "Get your hands covered in flour",
+      description: "Join us for a hands-on pasta workshop!",
+      image: "./svg/pasta.svg",
+      alt: "Illustration of pasta",
+    },
+
+    Dessert: {
+      title: "Bring out your inner pastry chef",
+      description: "Join us for a sweet dessert workshop!",
+      image: "./svg/dessert.svg",
+      alt: "Illustration of dessert",
+    },
+
+    Cocktail: {
+      title: "Shake, stir, and sip",
+      description: "Join us for a cocktail workshop!",
+      image: "./svg/cocktail.svg",
+      alt: "Illustration of a cocktail",
+    },
+  };
+
+  const invitation = invitations[activity];
+
+  if (invitation) {
+    document.querySelector("#invitation-name").textContent = name || "Guest";
+
+    document.querySelector("#invitation-activity").textContent =
+      activity.toUpperCase();
+
+    document.querySelector("#invitation-title").textContent = invitation.title;
+
+    document.querySelector("#invitation-description").textContent =
+      invitation.description;
+
+    const image = document.querySelector("#invitation-image");
+
+    image.src = invitation.image;
+    image.alt = invitation.alt;
+  } else {
+    opsamlingPlaceholder.textContent =
+      "Please sign up to receive your invitation.";
+  }
 }

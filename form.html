@@ -41,11 +41,69 @@
   <main>
     <section class="form-page">
       <header class="form-intro">
-        <h1>Formular</h1>
-        <p>Lav en formular, der sender brugeren videre til opsamlingssiden.</p>
+        <p class="eyebrow">GRAND OPENING</p>
+        <h1>SIGN UP</h1>
+        <p>Choose an activity and join us on our grand opening</p>
       </header>
 
-      <form class="form-placeholder" action="./opsamling.html"></form>
+
+      <form class="form-placeholder" action="./opsamling.html" method="GET">
+        <label for="name">YOUR NAME</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <fieldset>
+          <legend>CHOOSE YOUR WORKSHOP</legend>
+
+          <label for="pasta">
+            <input type="radio" id="pasta" name="activity" value="Pasta" required>
+            Pasta
+          </label>
+
+          <label for="dessert">
+            <input type="radio" id="dessert" name="activity" value="Dessert">
+            Dessert
+          </label>
+
+          <label for="cocktail">
+            <input type="radio" id="cocktail" name="activity" value="Cocktail">
+            Cocktail
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>DIETARY REQUIREMENTS</legend>
+
+          <label for="vegetarian">
+            <input type="checkbox" id="vegetarian" name="dietary" value="Vegetarian">
+            Vegetarian
+          </label>
+
+          <label for="gluten-free">
+            <input type="checkbox" id="gluten-free" name="dietary" value="Gluten-free">
+            Gluten-free
+          </label>
+
+          <label for="lactose-free">
+            <input type="checkbox" id="lactose-free" name="dietary" value="Lactose-free">
+            Lactose-free
+          </label>
+
+          <label for="vegan">
+            <input type="checkbox" id="vegan" name="dietary" value="Vegan">
+            Vegan
+          </label>
+        </fieldset>
+
+        <label for="drink">PREFERRED DRINK</label>
+        <select id="drink" name="drink" required>
+          <option value="" disabled selected>Choose your drink</option>
+          <option value="Wine">Wine</option>
+          <option value="Cocktail">Cocktail</option>
+          <option value="Non-alcoholic">Non-alcoholic</option>
+        </select>
+
+        <button type="submit">CONFIRM MY SPOT</button>
+      </form>
     </section>
   </main>
 

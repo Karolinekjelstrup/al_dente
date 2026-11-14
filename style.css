@@ -3,12 +3,18 @@
 ========================================= */
 
 html {
-  --color-page: #fbb8c9;
-  --color-surface: #fbb8c9;
-  --color-text: #222;
-  --color-muted: #666;
-  --color-border: #9b0200;
-  --color-footer: #c4e9ef;
+  --color-pink: #fbb8c9;
+  --color-red: #9b0200;
+  --color-black: #000000;
+  --color-olive: #524a00;
+  --color-blue: #c4e9ef;
+  --color-burgundy: #510e0f;
+
+  --color-surface: var(--color-pink);
+  --color-text: var(--color-black);
+  --color-muted: var(--color-black);
+  --color-border: var(--color-red);
+  --color-footer: var(--color-pink);
 
   --space-05: 0.5rem;
   --space-1: 1rem;
@@ -16,7 +22,6 @@ html {
   --space-3: 3rem;
 
   font-family: "Sometype Mono", monospace;
-  background: var(--color-page);
   color: var(--color-text);
 }
 
@@ -27,10 +32,10 @@ html {
 body {
   margin: 0;
   min-height: 100svh;
-
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: minmax(1rlh, 1fr) minmax(0, 75rem) minmax(1rlh, 1fr);
+  background: #fbb8c9;
 }
 
 h1,
@@ -53,10 +58,8 @@ main > * {
 }
 
 /* =========================================
-   3. FÆLLES HEADER, NAVIGATION OG FOOTER
+   3. HEADER, NAVIGATION OG FOOTER
 ========================================= */
-
-/* HEADER OG FOOTER */
 
 .site-header,
 .site-footer {
@@ -66,12 +69,12 @@ main > * {
 }
 
 .site-header {
-  background: var(--color-page);
+  background: var(--color-pink);
 }
 
 .site-footer {
-  background: var(--color-footer);
-  color: #213235;
+  background: var(--color-pink);
+  color: var(--color-red);
 }
 
 .header-content,
@@ -87,11 +90,11 @@ main > * {
   justify-content: space-between;
   align-items: center;
   gap: var(--space-1);
-  color: #9b0200;
+  color: var(--color-red);
 }
 
 .site-logo {
-  color: inherit;
+  color: var(--color-red);
   font-family: "Reenie Beanie", cursive;
   font-size: 2.5rem;
   text-decoration: none;
@@ -108,29 +111,30 @@ main > * {
 
 .site-nav button {
   padding: 0.4rem 0.7rem;
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
+  border: 1px solid var(--color-red);
+  background: var(--color-pink);
+  color: var(--color-red);
 }
 
 .menu {
   margin: 0;
   padding: var(--space-1);
   list-style: none;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: var(--color-pink);
+  border: 1px solid var(--color-red);
   position-area: bottom span-left;
 }
 
 .menu a {
   display: block;
   padding: 0.4rem 0;
-  color: #9b0200;
+  color: var(--color-red);
   text-decoration: none;
   border-bottom: 2px solid #0000;
 }
 
 .menu a[aria-current="page"] {
-  border-bottom-color: var(--color-border);
+  border-bottom-color: var(--color-red);
 }
 
 /* FOOTER */
@@ -155,15 +159,13 @@ main > * {
 
 .footer-bottom {
   grid-column: 1 / -1;
-  border-top: 1px solid #213235;
+  border-top: 1px solid var(--color-red);
   padding-top: var(--space-1);
 }
 
 /* =========================================
    4. FORSIDE
 ========================================= */
-
-/* FORSIDENS TRE SEKTIONER */
 
 .header,
 .info,
@@ -175,9 +177,10 @@ main > * {
 
 .header {
   display: grid;
+  justify-items: center;
   align-content: start;
   padding-block: var(--space-3);
-  background: var(--color-page);
+  background: var(--color-pink);
 }
 
 /* BILLEDE MED TEKST RUNDT OM */
@@ -189,7 +192,7 @@ main > * {
   font-family: "Inter", sans-serif;
   font-weight: 700;
   font-size: 28px;
-  color: #9a1b16;
+  color: var(--color-red);
   width: fit-content;
   margin: 0 auto;
 }
@@ -223,7 +226,7 @@ main > * {
   justify-content: space-between;
 }
 
-/* HERO INFORMATIONSTEKST */
+/* EVENTINFORMATION */
 
 .infotekst {
   text-align: center;
@@ -241,33 +244,40 @@ main > * {
 
 .forsideknapper {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
+  grid-template-columns: repeat(2, 180px);
+  gap: 12px;
   width: fit-content;
   margin: 0 auto;
   font-size: 16px;
   font-family: "Sometype Mono", monospace;
 }
 
-.knap1 {
-  background: #8f1b12;
-  color: #fbf4ec;
-  border: 2px solid #8f1b12;
-  padding: 5px;
+.knap1,
+.knap2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 46px;
+  box-sizing: border-box;
+  padding: 10px;
   text-decoration: none;
   text-align: center;
+  white-space: nowrap;
+}
+
+.knap1 {
+  background: #9b0200;
+  color: #fbb8c9;
+  border: 2px solid #9b0200;
 }
 
 .knap2 {
   background: transparent;
-  color: #8f1b12;
-  border: 2px solid #8f1b12;
-  padding: 5px;
-  text-decoration: none;
-  text-align: center;
+  color: #9b0200;
+  border: 2px solid #9b0200;
 }
 
-/* INFO / FLISER */
+/* BILLEDER PÅ RÆKKE */
 
 .info {
   display: grid;
@@ -279,9 +289,8 @@ main > * {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-  grid-row: 1 / 3;
+  grid-row: 1;
   grid-column: 1;
-  z-index: 1;
   margin: 40px 20px;
 }
 
@@ -289,87 +298,112 @@ main > * {
   display: block;
   width: 100%;
   aspect-ratio: 3 / 4;
+  object-fit: cover;
 }
 
-/* .baggrundf {
-  grid-row: 2 / 4;
-  grid-column: 1 / -1;
-  width: 100%;
-  height: 0;
-  min-height: 100%;
-  object-fit: cover;
-  object-position: center bottom;
-} */
-
-/* GRØN SEKTION */
+/* =========================================
+   5. WORKSHOP SEKTION PÅ FORSIDEN
+========================================= */
 
 .karoline {
   display: grid;
   grid-template-columns: inherit;
-  position: relative;
-  isolation: isolate;
-  min-height: 70vh;
-  align-items: center;
+  padding-block: 5rem 10rem;
+  background: var(--color-pink);
 }
 
-/* GRØN BAGGRUND */
-
-.background {
-  position: absolute;
-  inset: 0;
-  grid-column: 1 / -1;
-  z-index: -1;
-  padding: 0;
-}
-
-.background img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* TRAY */
-
-.tray {
+.workshop-content {
   grid-column: 2;
-  position: relative;
-  display: flex;
-  justify-content: center;
+  width: 100%;
+  max-width: 75rem;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
+  gap: 2.5rem;
+}
+
+/* VENSTRE SIDE */
+
+.workshop-copy {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  text-align: center;
+}
+
+.workshop-copy h2 {
+  color: #9b0200;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(2.8rem, 4.5vw, 4rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.workshop-subtitle {
+  color: var(--color-black);
+  font-family: "Reenie Beanie", cursive;
+  font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+  line-height: 1.1;
+  margin-top: 0.3rem;
+}
+
+.workshop-illustrations img {
+  display: block;
+  width: 100%;
+  max-width: 28rem;
+  height: auto;
+  margin: 1.5rem auto;
+}
+
+.workshop-description {
+  width: 100%;
+  max-width: 45ch;
+  color: var(--color-black);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* HØJRE SIDE MED BILLEDER */
+
+.workshop-images {
+  position: relative;
+  width: 100%;
+  max-width: 30rem;
+  min-height: 38rem;
+  justify-self: center;
+}
+
+.workshop-images img {
+  position: absolute;
+  display: block;
+  width: 72%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.workshop-image-one {
+  top: 0;
+  right: -1.5rem;
   z-index: 1;
 }
 
-.tray img:first-child {
-  width: 60%;
-  height: auto;
-  display: block;
-}
-
-.tray img:nth-child(2) {
-  position: absolute;
-  width: 23%;
-  height: auto;
-  top: 50%;
-  left: 49.4%;
-  transform: translate(-50%, -50%);
+.workshop-image-two {
+  top: 16rem;
+  left: -1.5rem;
+  z-index: 2;
 }
 
 /* =========================================
-   5. WORKSHOPS (SVG)
+   6. WORKSHOPSIDE
 ========================================= */
 
-/* BAGGRUND */
-
 body.workshop-page {
-  background: #c4e9ef;
+  --color-page: var(--color-blue);
+  --color-surface: var(--color-blue);
+  background: var(--color-blue);
 }
-
-.workshop-page .site-header {
-  background: #c4e9ef;
-}
-
-/* WORKSHOP-LAYOUT */
 
 .svg-page {
   display: grid;
@@ -383,7 +417,7 @@ body.workshop-page {
 }
 
 .svg-intro p {
-  color: var(--color-muted);
+  color: var(--color-black);
 }
 
 .svg-layout {
@@ -401,18 +435,18 @@ body.workshop-page {
 
 .accordion {
   display: grid;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-red);
 }
 
 .accordion-item {
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-red);
 }
 
 .accordion-item summary {
   padding: 1.2rem 0;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #9b0200;
+  color: var(--color-red);
   cursor: pointer;
   list-style: none;
   display: flex;
@@ -436,7 +470,7 @@ body.workshop-page {
 
 .accordion-item > div {
   padding: 0 0 1.2rem;
-  color: var(--color-text);
+  color: var(--color-black);
   line-height: 1.7;
 }
 
@@ -456,47 +490,406 @@ body.workshop-page {
 }
 
 /* =========================================
-   6. SIGN UP (FORM)
+   7. SIGN UP / FORMULAR
 ========================================= */
+
+body.signup-page {
+  --color-page: var(--color-burgundy);
+  --color-surface: var(--color-burgundy);
+  --color-text: var(--color-pink);
+  background: var(--color-burgundy);
+  color: var(--color-pink);
+}
+
+.signup-page .header-content,
+.signup-page .site-nav a,
+.signup-page .site-logo {
+  color: var(--color-pink);
+}
+
+/* OVERORDNET LAYOUT */
 
 .form-page {
   display: grid;
-  gap: var(--space-2);
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 2rem;
 }
+
+/* INTRODUKTION */
 
 .form-intro {
   display: grid;
-  gap: var(--space-1);
-  align-content: start;
-  max-width: 60ch;
+  justify-items: center;
+  text-align: center;
+  gap: 0.6rem;
+  width: 100%;
+  max-width: 50rem;
 }
 
-.form-intro p {
-  color: var(--color-muted);
+.signup-page .form-intro .eyebrow {
+  color: var(--color-pink);
+  font-size: 0.9rem;
+}
+
+.signup-page .form-intro h1 {
+  color: var(--color-blue);
+  font-family: "Inter", sans-serif;
+  font-size: 2.5rem;
+}
+
+.signup-page .form-intro p:last-child {
+  color: var(--color-pink);
+  font-size: 0.85rem;
+}
+
+/* FORMULAR */
+
+.signup-page .form-placeholder {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  max-width: 56rem;
+  justify-self: center;
+  border: none;
+  padding: 1.5rem 0 0;
+  position: relative;
+}
+
+/* LABELS */
+
+.signup-page .form-placeholder > label {
+  margin-bottom: -0.5rem;
+  font-size: 0.8rem;
+}
+
+/* INPUT OG DROPDOWN */
+
+.signup-page input[type="text"],
+.signup-page select {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: #ffffff;
+  color: var(--color-burgundy);
+  border: none;
+  border-radius: 2px;
+  font-family: "Sometype Mono", monospace;
+  font-size: 0.85rem;
+}
+
+.signup-page select {
+  cursor: pointer;
+}
+
+/* FIELDSETS */
+
+.signup-page fieldset {
+  border: none;
+  margin: 0.3rem 0 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.signup-page legend {
+  margin-bottom: 0.7rem;
+  padding: 0;
+  font-size: 0.8rem;
+}
+
+/* WORKSHOPKORT */
+
+.signup-page fieldset:first-of-type {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.signup-page fieldset:first-of-type legend {
+  grid-column: 1 / -1;
+}
+
+.signup-page fieldset:first-of-type label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 5rem;
+  padding: 0.8rem;
+  box-sizing: border-box;
+  background: #ffffff;
+  color: var(--color-burgundy);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* WORKSHOP STATUS */
+
+.signup-page fieldset:first-of-type label::before {
+  content: "Choose";
+  position: absolute;
+  top: 0.7rem;
+  left: 0.8rem;
+  font-size: 0.55rem;
+  color: var(--color-burgundy);
+}
+
+/* VALGT WORKSHOP */
+
+.signup-page fieldset:first-of-type label:has(input:checked) {
+  background: var(--color-blue);
+  color: var(--color-burgundy);
+}
+
+.signup-page fieldset:first-of-type label:has(input:checked)::before {
+  content: "Selected";
+  color: var(--color-burgundy);
+}
+
+/* RADIOKNAPPER */
+
+.signup-page fieldset:first-of-type input[type="radio"] {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.8rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin: 0;
+  accent-color: var(--color-olive);
+  cursor: pointer;
+}
+
+/* KOSTHENSYN */
+
+.signup-page fieldset:nth-of-type(2) > label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 1rem 0.5rem 0;
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.signup-page input[type="checkbox"] {
+  accent-color: var(--color-olive);
+  width: 0.8rem;
+  height: 0.8rem;
+  cursor: pointer;
+}
+
+/* SUBMIT-KNAP */
+
+.signup-page button[type="submit"] {
+  justify-self: start;
+  padding: 0.8rem 1.2rem;
+  background: var(--color-blue);
+  color: var(--color-black);
+  border: none;
+  font-family: "Sometype Mono", monospace;
+  font-size: 0.7rem;
+  cursor: pointer;
 }
 
 /* =========================================
-   7. OPSAMLING
+   8. OPSAMLING / INVITATION
 ========================================= */
+
+body.opsamling-page-body {
+  --color-page: var(--color-olive);
+  --color-surface: var(--color-olive);
+  --color-text: var(--color-pink);
+  --color-border: var(--color-pink);
+
+  background: var(--color-olive);
+  color: var(--color-pink);
+}
+
+body.opsamling-page-body .site-header {
+  background: var(--color-olive);
+}
+
+body.opsamling-page-body .header-content,
+body.opsamling-page-body .site-nav a,
+body.opsamling-page-body .site-logo {
+  color: var(--color-pink);
+}
+
+/* OVERORDNET LAYOUT */
 
 .opsamling-page {
   display: grid;
-  gap: var(--space-2);
-  align-items: start;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  padding-block: 3rem;
 }
 
-.opsamling-intro {
+/* INVITATIONSKORT */
+
+.invitation-card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 48rem;
+  min-height: 59rem;
+  padding: 3rem;
+  background: #baeaf0;
+  color: var(--color-black);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* KORTETS HEADER */
+
+.invitation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.invitation-logo {
+  color: var(--color-red);
+  font-family: "Reenie Beanie", cursive;
+  font-size: 3.5rem;
+  text-decoration: none;
+}
+
+.invitation-header p {
+  color: var(--color-olive);
+  font-size: 0.7rem;
+  line-height: 1.5;
+  text-align: right;
+}
+
+/* INVITATIONENS INDHOLD */
+
+.invitation-content {
   display: grid;
-  gap: var(--space-1);
-  max-width: 60ch;
+  gap: 1.5rem;
+  padding-top: 1rem;
 }
 
-.opsamling-intro p {
-  color: var(--color-muted);
+/* NAVN */
+
+.invitation-name {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.invitation-eyebrow {
+  color: var(--color-olive);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+}
+
+#invitation-name {
+  color: var(--color-black);
+  font-family: "Sometype Mono", monospace;
+  font-size: 1.2rem;
+}
+
+/* WORKSHOPNAVN */
+
+#invitation-activity {
+  color: var(--color-red);
+  font-family: "Inter", sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1;
+}
+
+/* TEKST OG ILLUSTRATION */
+
+.invitation-middle {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.5fr);
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.invitation-text {
+  display: grid;
+  gap: 1rem;
+  align-content: center;
+  max-width: 18ch;
+}
+
+.invitation-text h2 {
+  color: var(--color-red);
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.invitation-text p {
+  color: var(--color-black);
+  font-size: 0.7rem;
+  line-height: 1.6;
+}
+
+/* ILLUSTRATION */
+
+.invitation-illustration {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.illustration-circle {
+  display: none;
+}
+
+.invitation-illustration img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 90%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* AFSLUTNING */
+
+.invitation-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  background: transparent;
+}
+
+.invitation-footer p:first-child {
+  color: var(--color-red);
+  font-family: "Reenie Beanie", cursive;
+  font-size: 2rem;
+}
+
+.invitation-footer p:last-child {
+  color: var(--color-olive);
+  font-size: 0.65rem;
+  line-height: 1.6;
+  text-align: right;
+}
+
+/* TILBAGE-KNAP */
+
+.invitation-actions {
+  text-align: center;
+}
+
+.invitation-actions a {
+  color: var(--color-pink);
+  font-size: 0.8rem;
 }
 
 /* =========================================
-   8. RESPONSIVE DESIGN
+   9. RESPONSIVE DESIGN
 ========================================= */
 
 /* MOBIL */
@@ -506,12 +899,113 @@ body.workshop-page {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .tray img:first-child {
-    width: 75%;
+  /* FORSIDE */
+
+  .infobilleder {
+    grid-template-columns: 1fr;
+    margin: 2rem 1rem;
   }
 
-  .tray img:nth-child(2) {
-    width: 28%;
+  /* WORKSHOP SEKTION */
+
+  .workshop-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .workshop-copy h2 {
+    font-size: clamp(3rem, 10vw, 5rem);
+  }
+
+  .workshop-subtitle {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+
+  .workshop-illustrations img {
+    max-width: 30rem;
+    margin: 1.5rem auto;
+  }
+
+  .workshop-description {
+    max-width: 43ch;
+    font-size: 1rem;
+  }
+
+  .workshop-images {
+    min-height: 28rem;
+    max-width: 25rem;
+  }
+
+  .workshop-images img {
+    width: 72%;
+  }
+
+  .workshop-image-two {
+    top: 11rem;
+  }
+
+  /* SIGN UP */
+
+  .signup-page fieldset:first-of-type {
+    grid-template-columns: 1fr;
+  }
+
+  .signup-page fieldset:first-of-type label {
+    min-height: 5rem;
+  }
+
+  .signup-page fieldset:nth-of-type(2) > label {
+    white-space: normal;
+  }
+
+  /* OPSAMLING – MOBIL */
+
+  .opsamling-page {
+    padding-block: 1rem;
+  }
+
+  .invitation-card {
+    min-height: auto;
+    padding: 1.25rem;
+  }
+
+  .invitation-header {
+    padding-bottom: 0.75rem;
+  }
+
+  .invitation-middle {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin-top: 0;
+  }
+
+  .invitation-content {
+    gap: 0.75rem;
+    padding-top: 0.5rem;
+  }
+
+  .invitation-text {
+    max-width: 25ch;
+    gap: 0.5rem;
+  }
+
+  .invitation-illustration {
+    max-width: 12rem;
+    justify-self: center;
+  }
+
+  .invitation-illustration img {
+    width: 100%;
+    max-height: 12rem;
+    object-fit: contain;
+  }
+
+  .invitation-footer {
+    margin-top: 0.5rem;
+  }
+
+  .invitation-footer p:first-child {
+    font-size: 1.6rem;
   }
 }
 
@@ -529,10 +1023,6 @@ body.workshop-page {
     border: none;
     background: none;
     position: static;
-  }
-
-  .form-page {
-    grid-template-columns: min(40%, 50ch) 1fr;
   }
 }
 
@@ -554,20 +1044,161 @@ body.workshop-page {
   }
 
   .forsideknapper {
-    grid-template-columns: 1fr 1fr;
     font-size: 18px;
   }
 
+  /* ÆNDRET: smallere og centreret billedrække */
   .infobilleder {
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 100px;
+    grid-template-columns: repeat(3, 1fr);
+    width: calc(100% - 120px);
+    max-width: 1200px;
+    margin: 40px auto;
+  }
+
+  .workshop-content {
+    gap: 2.5rem;
   }
 
   .svg-layout {
     grid-template-columns: 1fr min(40%, 36ch);
   }
+}
 
-  .opsamling-page {
-    grid-template-columns: minmax(0, 44ch) minmax(20rem, 1fr);
+/* =========================================
+   10. SIDE-SPECIFIKKE FARVER
+========================================= */
+
+/* SVG / WORKSHOPSIDE */
+
+body.workshop-page .site-header,
+body.workshop-page .site-footer {
+  background: var(--color-blue);
+}
+
+body.workshop-page .site-header,
+body.workshop-page .site-header a,
+body.workshop-page .site-footer,
+body.workshop-page .site-footer h2,
+body.workshop-page .site-footer h3,
+body.workshop-page .site-footer p,
+body.workshop-page .site-footer a,
+body.workshop-page .accordion-item summary {
+  color: var(--color-olive);
+}
+
+body.workshop-page .menu a[aria-current="page"] {
+  border-bottom-color: var(--color-olive);
+}
+
+body.workshop-page .site-footer .footer-bottom {
+  border-top-color: var(--color-olive);
+}
+
+body.workshop-page .accordion,
+body.workshop-page .accordion-item {
+  border-color: var(--color-olive);
+}
+
+/* FORMULARSIDE */
+
+body.signup-page .site-header,
+body.signup-page .site-footer {
+  background: var(--color-burgundy);
+}
+
+body.signup-page .site-header,
+body.signup-page .site-header a,
+body.signup-page .site-footer,
+body.signup-page .site-footer h2,
+body.signup-page .site-footer h3,
+body.signup-page .site-footer p,
+body.signup-page .site-footer a {
+  color: var(--color-pink);
+}
+
+body.signup-page .site-footer .footer-bottom {
+  border-top-color: var(--color-pink);
+}
+
+/* OPSAMLINGSSIDE */
+
+body.opsamling-page-body .site-header,
+body.opsamling-page-body .site-footer {
+  background: var(--color-olive);
+}
+
+body.opsamling-page-body .site-header,
+body.opsamling-page-body .site-header a,
+body.opsamling-page-body .site-footer,
+body.opsamling-page-body .site-footer h2,
+body.opsamling-page-body .site-footer h3,
+body.opsamling-page-body .site-footer p,
+body.opsamling-page-body .site-footer a,
+body.opsamling-page-body .invitation-actions a {
+  color: var(--color-blue);
+}
+
+body.opsamling-page-body .menu a[aria-current="page"] {
+  border-bottom-color: var(--color-blue);
+}
+
+body.opsamling-page-body .site-footer .footer-bottom {
+  border-top-color: var(--color-blue);
+}
+
+/* =========================================
+   MOBILMENU – SIDE-SPECIFIKKE FARVER
+========================================= */
+
+@media (max-width: 600px) {
+  /* WORKSHOPSIDE – BLÅ BAGGRUND, OLIVENGRØN TEKST */
+
+  body.workshop-page .site-nav button,
+  body.workshop-page .menu {
+    background: var(--color-blue);
+    color: var(--color-olive);
+    border-color: var(--color-olive);
+  }
+
+  body.workshop-page .menu a {
+    color: var(--color-olive);
+  }
+
+  body.workshop-page .menu a[aria-current="page"] {
+    border-bottom-color: var(--color-olive);
+  }
+
+  /* SIGN UP – BURGUNDER BAGGRUND, PINK TEKST */
+
+  body.signup-page .site-nav button,
+  body.signup-page .menu {
+    background: var(--color-burgundy);
+    color: var(--color-pink);
+    border-color: var(--color-pink);
+  }
+
+  body.signup-page .menu a {
+    color: var(--color-pink);
+  }
+
+  body.signup-page .menu a[aria-current="page"] {
+    border-bottom-color: var(--color-pink);
+  }
+
+  /* OPSAMLING – OLIVENGRØN BAGGRUND, BLÅ TEKST */
+
+  body.opsamling-page-body .site-nav button,
+  body.opsamling-page-body .menu {
+    background: var(--color-olive);
+    color: var(--color-blue);
+    border-color: var(--color-blue);
+  }
+
+  body.opsamling-page-body .menu a {
+    color: var(--color-blue);
+  }
+
+  body.opsamling-page-body .menu a[aria-current="page"] {
+    border-bottom-color: var(--color-blue);
   }
 }
