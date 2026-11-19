@@ -81,9 +81,33 @@
     <!-- INFO / BILLEDER -->
     <section class="info">
       <div class="infobilleder">
-        <img src="./imgs/forside/et.webp" alt="Middag med gæster">
-        <img src="./imgs/forside/to.webp" alt="Smagsprøver på skeer">
-        <img src="./imgs/forside/tre.webp" alt="En serveret ret">
+        <button class="info-knap" popovertarget="info-et">
+          <img src="./imgs/forside/et.webp" alt="Middag med gæster">
+        </button>
+        <button class="info-knap" popovertarget="info-to">
+          <img src="./imgs/forside/to.webp" alt="Smagsprøver på skeer">
+        </button>
+        <button class="info-knap" popovertarget="info-tre">
+          <img src="./imgs/forside/tre.webp" alt="En serveret ret">
+        </button>
+      </div>
+
+      <div class="info-popover" id="info-et" popover>
+        <h3>DINNER WITH FRIENDS</h3>
+        <p>Long tables, candlelight and good wine. At al dEnTe we eat together, the Italian way.</p>
+        <button popovertarget="info-et" popovertargetaction="hide">CLOSE</button>
+      </div>
+
+      <div class="info-popover" id="info-to" popover>
+        <h3>A TASTE OF EVERYTHING</h3>
+        <p>Small bites served on spoons, so you can try a little of everything from our kitchen.</p>
+        <button popovertarget="info-to" popovertargetaction="hide">CLOSE</button>
+      </div>
+
+      <div class="info-popover" id="info-tre" popover>
+        <h3>FROM OUR KITCHEN</h3>
+        <p>Simple, honest dishes made with fresh ingredients and cooked al dente.</p>
+        <button popovertarget="info-tre" popovertargetaction="hide">CLOSE</button>
       </div>
     </section>
 
@@ -102,7 +126,9 @@
 
           <!-- SAMLET SVG -->
           <div class="workshop-illustrations">
-            <img src="./svg/workshops.svg" alt="Illustrationer af cocktail, pasta og dessert">
+            <svg viewBox="0 0 1920 1080" role="img" aria-label="Illustrationer af cocktail, pasta og dessert">
+              <use href="./spotlight.svg#tegninger"></use>
+            </svg>
           </div>
 
           <p class="workshop-description">
@@ -112,6 +138,9 @@
             there's something for everyone. Pick your favourite
             workshop and get ready for a delicious experience at al dEnTe.
           </p>
+
+          <a class="workshop-knap" href="./svg.html">SEE WORKSHOPS</a>
+
 
         </div>
 

@@ -305,6 +305,28 @@ main > * {
    5. WORKSHOP SEKTION PÅ FORSIDEN
 ========================================= */
 
+.workshop-knap {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 46px;
+  margin-top: 2rem;
+  padding: 10px 1.5rem;
+  background: var(--color-red);
+  color: var(--color-pink);
+  border: 2px solid var(--color-red);
+  font-family: "Sometype Mono", monospace;
+  font-size: 16px;
+  text-decoration: none;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.workshop-knap:hover {
+  background: transparent;
+  color: var(--color-red);
+}
 .karoline {
   display: grid;
   grid-template-columns: inherit;
@@ -688,6 +710,7 @@ body.signup-page {
   font-family: "Sometype Mono", monospace;
   font-size: 0.7rem;
   cursor: pointer;
+  margin-bottom: 3rem;
 }
 
 /* =========================================
@@ -1202,3 +1225,217 @@ body.opsamling-page-body .site-footer .footer-bottom {
     border-bottom-color: var(--color-blue);
   }
 }
+
+/* =========================================
+  ANNIMATIONER
+========================================= */
+/* 3 billeder */
+.infobilleder {
+  view-timeline: --cards;
+}
+
+.infobilleder .info-knap {
+  animation: appear ease-out both;
+  animation-timeline: --cards;
+}
+
+.infobilleder .info-knap:nth-child(1) {
+  animation-range: entry 0% entry 100%;
+}
+.infobilleder .info-knap:nth-child(2) {
+  animation-range: entry 50% contain 25%;
+}
+.infobilleder .info-knap:nth-child(3) {
+  animation-range: entry 100% contain 50%;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    translate: 0 4rem;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* de 2 knapper */
+
+.knap1 {
+  display: inline-block;
+  animation: appear-1 ease-out both;
+  animation-timeline: view();
+  animation-range: 0% 50%;
+}
+
+.knap2 {
+  display: inline-block;
+  animation: appear-2 ease-out both;
+  animation-timeline: view();
+  animation-range: 0% 50%;
+}
+
+@keyframes appear-1 {
+  from {
+    opacity: 0;
+    translate: -2rem 0;
+    rotate: -5deg;
+  }
+}
+
+@keyframes appear-2 {
+  from {
+    opacity: 0;
+    translate: 2rem 0;
+    rotate: 5deg;
+  }
+}
+
+/* workshop billeder */
+.workshop-image-one {
+  animation: rotate-one linear both;
+  animation-timeline: view();
+}
+
+.workshop-image-two {
+  animation: rotate-two linear both;
+  animation-timeline: view();
+}
+
+@keyframes rotate-one {
+  from {
+    rotate: -8deg;
+  }
+  to {
+    rotate: 8deg;
+  }
+}
+
+@keyframes rotate-two {
+  from {
+    rotate: 8deg;
+  }
+  to {
+    rotate: -8deg;
+  }
+}
+
+/* =========================================
+  VIEW TRANSITIONS
+========================================= */
+@view-transition {
+  navigation: auto;
+}
+
+/* MORPH AF TEGNINGER */
+.workshop-illustrations {
+  width: 100%;
+  max-width: 28rem;
+  margin: 1.5rem auto;
+  overflow: clip;
+}
+
+.workshop-illustrations svg {
+  display: block;
+  width: 161%;
+  max-width: none;
+  margin: -29.4% 0 -35.6% -29.4%;
+  view-transition-name: workshop-svg;
+}
+
+.svg-spotlight {
+  view-transition-name: workshop-svg;
+}
+
+::view-transition-group(workshop-svg) {
+  animation-duration: 0.7s;
+}
+/* =========================================
+  POPOVER PÅ INFOBILLEDER
+========================================= */
+.info-knap {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.info-popover {
+  margin: auto;
+  width: min(90vw, 28rem);
+  padding: 2rem;
+  background: var(--color-pink);
+  color: var(--color-red);
+  border: 2px solid var(--color-red);
+  font-family: "Sometype Mono", monospace;
+}
+
+.info-popover h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.info-popover p {
+  color: var(--color-black);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.info-popover button {
+  padding: 0.6rem 1rem;
+  background: var(--color-red);
+  color: var(--color-pink);
+  border: none;
+  font-family: "Sometype Mono", monospace;
+  cursor: pointer;
+}
+
+.info-popover::backdrop {
+  background: rgb(0 0 0 / 0.5);
+}
+
+/* TYDELIGT AT MAN KAN TRYKKE */
+.info-knap {
+  position: relative;
+  overflow: hidden;
+}
+
+.info-knap img {
+  transition: scale 0.4s ease;
+}
+
+.info-knap::after {
+  content: "+ READ MORE";
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  padding: 0.5rem 0.8rem;
+  background: var(--color-pink);
+  color: var(--color-red);
+  font-family: "Sometype Mono", monospace;
+  font-size: 0.8rem;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.info-knap:hover img {
+  scale: 1.05;
+}
+
+.info-knap:hover::after {
+  background: var(--color-red);
+  color: var(--color-pink);
+}
+
+.info-knap:focus-visible {
+  outline: 3px solid var(--color-red);
+  outline-offset: 4px;
+}
+/* =========================================
+  LIGHT / DARKMODE
+========================================= */
