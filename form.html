@@ -1,24 +1,38 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formular | Eventnavn</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+
+  <title>Al Dente</title>
   <link rel="stylesheet" href="./starter.css">
   <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
+<body class="signup-page">
+  <!-- HEADER / MENU -->
   <header class="site-header">
     <div class="header-content">
-      <a class="site-logo" href="./">Eventnavn</a>
+      <a class="site-logo" href="./">al dEnTe</a>
+
       <nav class="site-nav">
-        <button>Menu</button>
+        <button popovertarget="menu">Menu</button>
+
         <ul class="menu" id="menu" popover>
-          <li><a href="./">Forside</a></li>
-          <li><a href="./svg.html">Interaktiv SVG</a></li>
-          <li><a href="./form.html" aria-current="page">Formular</a></li>
+          <li><a href="./">HOME</a></li>
+          <li><a href="./svg.html">WORKSHOPS</a></li>
+          <li><a href="./form.html" aria-current="page">SIGN UP</a></li>
         </ul>
       </nav>
     </div>
@@ -27,20 +41,102 @@
   <main>
     <section class="form-page">
       <header class="form-intro">
-        <h1>Formular</h1>
-        <p>Lav en formular, der sender brugeren videre til opsamlingssiden.</p>
+        <p class="eyebrow">GRAND OPENING</p>
+        <h1>SIGN UP</h1>
+        <p>Choose an activity and join us on our grand opening</p>
       </header>
 
-      <form class="form-placeholder" action="./opsamling.html"></form>
+
+      <form class="form-placeholder" action="./opsamling.html" method="GET">
+        <label for="name">YOUR NAME</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <fieldset>
+          <legend>CHOOSE YOUR WORKSHOP</legend>
+
+          <label for="pasta">
+            <input type="radio" id="pasta" name="activity" value="Pasta" required>
+            Pasta
+          </label>
+
+          <label for="dessert">
+            <input type="radio" id="dessert" name="activity" value="Dessert">
+            Dessert
+          </label>
+
+          <label for="cocktail">
+            <input type="radio" id="cocktail" name="activity" value="Cocktail">
+            Cocktail
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>DIETARY REQUIREMENTS</legend>
+
+          <label for="vegetarian">
+            <input type="checkbox" id="vegetarian" name="dietary" value="Vegetarian">
+            Vegetarian
+          </label>
+
+          <label for="gluten-free">
+            <input type="checkbox" id="gluten-free" name="dietary" value="Gluten-free">
+            Gluten-free
+          </label>
+
+          <label for="lactose-free">
+            <input type="checkbox" id="lactose-free" name="dietary" value="Lactose-free">
+            Lactose-free
+          </label>
+
+          <label for="vegan">
+            <input type="checkbox" id="vegan" name="dietary" value="Vegan">
+            Vegan
+          </label>
+        </fieldset>
+
+        <label for="drink">PREFERRED DRINK</label>
+        <select id="drink" name="drink" required>
+          <option value="" disabled selected>Choose your drink</option>
+          <option value="Wine">Wine</option>
+          <option value="Cocktail">Cocktail</option>
+          <option value="Non-alcoholic">Non-alcoholic</option>
+        </select>
+
+        <button type="submit">CONFIRM MY SPOT</button>
+      </form>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-content">
-      <p>Eventnavn</p>
-      <p>Footer</p>
+
+      <div class="footer-column">
+        <h4>MENU</h4>
+        <a href="./">HOME</a>
+        <a href="./svg.html">WORKSHOPS</a>
+        <a href="./form.html">SIGN UP</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>GRAND OPENING</h4>
+        <p>DECEMBER 1ST</p>
+        <p>7–9PM</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>FIND US</h4>
+        <p>RUE AMÉLIE, BREDGADE 51</p>
+        <p>1260 COPENHAGEN</p>
+      </div>
+
+      <div class="footer-bottom">
+        AL DENTE 2026
+      </div>
+
     </div>
   </footer>
+
   <script src="./script.js"></script>
 </body>
 

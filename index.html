@@ -4,35 +4,193 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eventnavn</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+
+  <title>al dEnTe</title>
   <link rel="stylesheet" href="./starter.css">
   <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+
+  <!-- HEADER / MENU -->
   <header class="site-header">
     <div class="header-content">
-      <a class="site-logo" href="./">Eventnavn</a>
+      <a class="site-logo" href="./">al dEnTe</a>
+
       <nav class="site-nav">
-        <button>Menu</button>
+        <button popovertarget="menu">Menu</button>
+
         <ul class="menu" id="menu" popover>
-          <li><a href="./" aria-current="page">Forside</a></li>
-          <li><a href="./svg.html">Interaktiv SVG</a></li>
-          <li><a href="./form.html">Formular</a></li>
+          <li><a href="./" aria-current="page">HOME</a></li>
+          <li><a href="./svg.html">WORKSHOPS</a></li>
+          <li><a href="./form.html">SIGN UP</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main></main>
+  <!-- MAIN -->
+  <main>
 
+    <!-- HERO SECTION -->
+    <section class="header">
+
+      <div class="billedtekst">
+        <h2 class="top">ITALIAN RESTAU-</h2>
+        <h2 class="venstre">GRAND OPENING</h2>
+
+        <img class="billede" src="./imgs/forside/hero.webp" alt="Fire skeer i en crème brûlée">
+
+        <h2 class="højre">
+          <span>RANT</span>
+          <span>AL DENTE</span>
+        </h2>
+      </div>
+
+      <div class="infotekst">
+        <p class="tekst1">
+          7–9pm<br>
+          1st of december<br>
+          Al dente Copenhagen
+        </p>
+
+        <p class="tekst2">
+          Rue Amélie, Bredgade 51<br>
+          1260 Copenhagen K<br>
+          Denmark
+        </p>
+      </div>
+
+      <div class="forsideknapper">
+        <a class="knap1" href="./svg.html">EXPLORE</a>
+        <a class="knap2" href="./form.html">SIGN UP</a>
+      </div>
+
+    </section>
+
+    <!-- INFO / BILLEDER -->
+    <section class="info">
+      <div class="infobilleder">
+        <button class="info-knap" popovertarget="info-et">
+          <img src="./imgs/forside/et.webp" alt="Middag med gæster">
+        </button>
+        <button class="info-knap" popovertarget="info-to">
+          <img src="./imgs/forside/to.webp" alt="Smagsprøver på skeer">
+        </button>
+        <button class="info-knap" popovertarget="info-tre">
+          <img src="./imgs/forside/tre.webp" alt="En serveret ret">
+        </button>
+      </div>
+
+      <div class="info-popover" id="info-et" popover>
+        <h3>DINNER WITH FRIENDS</h3>
+        <p>Long tables, candlelight and good wine. At al dEnTe we eat together, the Italian way.</p>
+        <button popovertarget="info-et" popovertargetaction="hide">CLOSE</button>
+      </div>
+
+      <div class="info-popover" id="info-to" popover>
+        <h3>A TASTE OF EVERYTHING</h3>
+        <p>Small bites served on spoons, so you can try a little of everything from our kitchen.</p>
+        <button popovertarget="info-to" popovertargetaction="hide">CLOSE</button>
+      </div>
+
+      <div class="info-popover" id="info-tre" popover>
+        <h3>FROM OUR KITCHEN</h3>
+        <p>Simple, honest dishes made with fresh ingredients and cooked al dente.</p>
+        <button popovertarget="info-tre" popovertargetaction="hide">CLOSE</button>
+      </div>
+    </section>
+
+    <!-- WORKSHOP SEKTION -->
+    <section class="karoline">
+
+      <div class="workshop-content">
+
+        <div class="workshop-copy">
+
+          <h2>WORKSHOPS</h2>
+
+          <p class="workshop-subtitle">
+            A TASTE OF ITALY, YOUR WAY
+          </p>
+
+          <!-- SAMLET SVG -->
+          <div class="workshop-illustrations">
+            <svg viewBox="0 0 1920 1080" role="img" aria-label="Illustrationer af cocktail, pasta og dessert">
+              <use href="./spotlight.svg#tegninger"></use>
+            </svg>
+          </div>
+
+          <p class="workshop-description">
+            Get hands-on in the kitchen and choose your own adventure.
+            Whether you want to shake up cocktails, make fresh pasta
+            from scratch, or bring out your inner pastry chef,
+            there's something for everyone. Pick your favourite
+            workshop and get ready for a delicious experience at al dEnTe.
+          </p>
+
+          <a class="workshop-knap" href="./svg.html">SEE WORKSHOPS</a>
+
+
+        </div>
+
+        <!-- HØJRE SIDE MED BILLEDER -->
+        <div class="workshop-images">
+
+          <img class="workshop-image-one" src="./imgs/forside/fire.webp" alt="Cocktails and dinner">
+
+          <img class="workshop-image-two" src="./imgs/forside/fem.webp" alt="Wine and food">
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-content">
-      <p>Eventnavn</p>
-      <p>Footer</p>
+
+      <div class="footer-column">
+        <h4>MENU</h4>
+        <a href="./">HOME</a>
+        <a href="./svg.html">WORKSHOPS</a>
+        <a href="./form.html">SIGN UP</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>GRAND OPENING</h4>
+        <p>DECEMBER 1ST</p>
+        <p>7–9PM</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>FIND US</h4>
+        <p>RUE AMÉLIE, BREDGADE 51</p>
+        <p>1260 COPENHAGEN</p>
+      </div>
+
+      <div class="footer-bottom">
+        AL DENTE 2026
+      </div>
+
     </div>
   </footer>
+
   <script src="./script.js"></script>
+
 </body>
 
 </html>
